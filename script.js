@@ -139,18 +139,23 @@ gsap.utils.toArray('.item').forEach(item => {
     });
 });
 
-// Обробка фільтру ціни із анімацією
-document.getElementById('priceRange').addEventListener('input', function() {
-    const value = this.value;
-    document.getElementById('priceValue').textContent = `${value} грн`;
+// Обробка фільтрів
+document.getElementById('brandFilter').addEventListener('change', filterItems);
+document.getElementById('priceRange').addEventListener('input', filterItems);
+
+function filterItems() {
+    const brand = document.getElementById('brandFilter').value.toLowerCase();
+    const price = parseInt(document.getElementById('priceRange').value);
 
     gsap.to('.item', {
         duration: 0.6,
         opacity: 0,
         onComplete: () => {
             document.querySelectorAll('.item').forEach(item => {
-                const price = parseInt(item.querySelector('.price-display').textContent.replace(' грн', ''));
-                if (price <= value) {
+                const itemBrand = item.querySelector('h3').textContent.toLowerCase();
+                const itemPrice = parseInt(item.querySelector('.price-display').getAttribute('data-price'));
+
+                if ((brand === 'acousma' || itemBrand.includes(brand)) && itemPrice <= price) {
                     item.style.display = 'block';
                 } else {
                     item.style.display = 'none';
@@ -159,7 +164,7 @@ document.getElementById('priceRange').addEventListener('input', function() {
             gsap.to('.item', { opacity: 1, duration: 0.6, ease: 'power3.out' });
         }
     });
-});
+}
 
 // Функція для показу модального вікна оплати
 function showPaymentModal(itemName, itemPrice, discount) {
