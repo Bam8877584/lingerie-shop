@@ -1,32 +1,93 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Топовое Бельё</title>
+    <title>Callisto.Co — Топова Білизна</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Іконки Font Awesome -->
 </head>
 <body>
-    <header>
-        <h1>Топовое Бельё</h1>
-        <p>Элегантность и стиль в каждой детали</p>
+    <header class="main-header">
+        <nav>
+            <div class="logo">Callisto.Co</div>
+            <ul class="nav-menu">
+                <li><a href="#pro-nas">Про нас</a></li>
+                <li><a href="#delivery">Доставка і оплата</a></li>
+                <li><a href="#orders">РК замовлення</a></li>
+                <li><a href="#articles">Статті</a></li>
+                <li><a href="#reviews">Відгуки</a></li>
+                <li><input type="text" placeholder="Поиск" class="search-bar"></li>
+            </ul>
+            <div class="contacts">
+                <a href="tel:+380997172287" class="phone"><i class="fas fa-phone"></i> +380 99 71-72-287</a>
+                <div class="socials">
+                    <a href="https://instagram.com/callisto.co" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://t.me/callisto_co" target="_blank"><i class="fab fa-telegram"></i></a>
+                    <a href="viber://chat?number=+380997172287" target="_blank"><i class="fab fa-viber"></i></a>
+                </div>
+                <button class="cart-btn"><i class="fas fa-shopping-cart"></i> (0)</button>
+            </div>
+        </nav>
     </header>
 
-    <section class="gallery">
-        <div class="item">
-            <img src="./images/lingerie1.jpg" alt="Комплект белья">
-            <h3>Комплект "Нежность"</h3>
-            <p>Роскошный набор из шёлка и кружева. Размер: S-M.</p>
+    <section class="categories">
+        <div class="category" data-content="sales">Акції</div>
+        <div class="category" data-content="new">Нове</div>
+        <div class="category" data-content="elegance">Елегантність</div>
+    </section>
+
+    <section class="filters">
+        <h3>Фільтри</h3>
+        <div class="filter-section">
+            <label>Бренди:</label>
+            <select>
+                <option>Acousma</option>
+                <option>Amour Secret</option>
+                <option>Anabel Arto</option>
+                <option>Anfen</option>
+                <option>Anita</option>
+                <option>Annajolly</option>
+                <option>Ao Jia Shi</option>
+            </select>
         </div>
-        <div class="item">
-            <img src="./images/lingerie2.jpg" alt="Комплект белья">
-            <h3>Комплект "Страсть"</h3>
-            <p>Смелый дизайн для уверенных. Размер: M-L.</p>
+        <div class="filter-section">
+            <label>Ціна:</label>
+            <input type="range" min="0" max="5000" value="0" id="priceRange">
+            <span id="priceValue">0 грн</span>
         </div>
     </section>
 
+    <section class="gallery">
+        <div class="item">
+            <img src="./images/lingerie1.jpg" alt="Комплект білизни">
+            <h3>Комплект "Ніжність"</h3>
+            <p>Розкішний набір із шовку та мережива. Розмір: S-M.</p>
+            <div class="price">1500 грн</div>
+            <button class="buy-btn">Купити</button>
+        </div>
+        <div class="item">
+            <img src="./images/lingerie2.jpg" alt="Комплект білизни">
+            <h3>Комплект "Палкість"</h3>
+            <p>Сміливий дизайн для впевнених. Розмір: M-L.</p>
+            <div class="price">2000 грн</div>
+            <button class="buy-btn">Купити</button>
+        </div>
+    </section>
+
+    <section class="upload-section">
+        <h2>Додати новий комплект білизни</h2>
+        <form id="uploadForm">
+            <input type="file" id="imageUpload" accept="image/jpeg, image/png" required>
+            <input type="text" id="itemName" placeholder="Назва комплекту" required>
+            <textarea id="itemDescription" placeholder="Опис (розмір, матеріал тощо)" required></textarea>
+            <input type="number" id="itemPrice" placeholder="Ціна (грн)" required>
+            <button type="submit">Додати</button>
+        </form>
+    </section>
+
     <footer>
-        <p>© 2025 Топовое Бельё. Все права защищены.</p>
+        <p>© 2025 Callisto.Co. Усі права захищені.</p>
     </footer>
 
     <script src="script.js"></script>
