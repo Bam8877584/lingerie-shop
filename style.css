@@ -1,0 +1,89 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5e8ec; /* Более мягкий розоватый фон */
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #e31b60; /* Яркий розовый для премиум-стиля */
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header p {
+    margin: 10px 0 0;
+    font-size: 1.3em;
+    font-style: italic;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.item img:hover {
+    opacity: 0.8;
+}
+
+.item h3 {
+    margin: 15px 0;
+    color: #e31b60;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.item p {
+    margin: 10px 0;
+    color: #666;
+    font-size: 1.1em;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #e31b60;
+    color: white;
+    position: relative; /* Убрали fixed, чтобы футер не налегал на контент */
+    width: 100%;
+    margin-top: 20px;
+}
