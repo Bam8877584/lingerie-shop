@@ -87,7 +87,7 @@ body {
 
 .main-header .phone {
     color: #c0c0c0; /* Сріблястий колір */
-    font-size: 0.9em; /* Зменшений розмір шрифту */
+    font-size: 0.9em; /* Зменщений розмір шрифту */
     margin-right: 10px;
     text-decoration: none;
     transition: color 0.3s ease, text-shadow 0.3s ease;
@@ -119,14 +119,15 @@ body {
     background: #87CEEB; /* Небесно-блакитна кнопка кошика */
     color: white;
     border: none;
-    padding: 6px 10px; /* Уменьшенный размер кнопки (с 8px 12px до 6px 10px) */
+    padding: 6px 10px; /* Уменьшенный размер кнопки */
     border-radius: 5px;
     font-size: 0.8em; /* Уменьшенный шрифт (с 0.9em до 0.8em) */
     cursor: pointer;
     transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 0 10px #87CEEB;
     border: 1px solid #d4a017; /* Золотиста обводка */
-    margin-right: 5px; /* Сдвинут от края (уменьшен отступ справа с 0 до 5px) */
+    margin-right: 5px; /* Сдвинут от края (уменьшен отступ справа) */
+    float: right; /* Убедимся, что корзина остаётся справа */
 }
 
 .main-header .cart-btn:hover {
@@ -136,19 +137,19 @@ body {
 }
 
 .main-header .auth-buttons {
-    float: right;
-    margin-top: 5px; /* Сдвинут под корзину (оставляем margin-top, но можно убрать, если нужно большее смещение) */
+    float: right; /* Сдвинут под корзину, чтобы располагаться после неё */
+    margin-top: 5px; /* Сохраняем небольшой отступ сверху для выравнивания */
 }
 
 .main-header .auth-buttons button {
     background: none;
     color: #c0c0c0; /* Сріблястий колір */
     border: 1px solid #87CEEB; /* Небесно-блакитна обводка */
-    padding: 6px 8px; /* Уменьшенный размер кнопок (с 8px 10px до 6px 8px) */
+    padding: 6px 8px; /* Уменьшенный размер кнопок */
     border-radius: 5px;
     font-size: 0.8em; /* Уменьшенный шрифт (с 0.9em до 0.8em) */
     cursor: pointer;
-    margin-left: 5px; /* Уменьшен отступ между кнопками (с 8px до 5px для компактности) */
+    margin-left: 5px; /* Уменьшен отступ между кнопками */
     transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
