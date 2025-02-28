@@ -1,95 +1,653 @@
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Callisto.Co — Топова Білизна</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Іконки Font Awesome -->
-</head>
-<body>
-    <header class="main-header">
-        <nav>
-            <div class="logo">Callisto.Co</div>
-            <ul class="nav-menu">
-                <li><a href="#pro-nas">Про нас</a></li>
-                <li><a href="#delivery">Доставка і оплата</a></li>
-                <li><a href="#orders">РК замовлення</a></li>
-                <li><a href="#articles">Статті</a></li>
-                <li><a href="#reviews">Відгуки</a></li>
-                <li><input type="text" placeholder="Поиск" class="search-bar"></li>
-            </ul>
-            <div class="contacts">
-                <a href="tel:+380997172287" class="phone"><i class="fas fa-phone"></i> +380 99 71-72-287</a>
-                <div class="socials">
-                    <a href="https://instagram.com/callisto.co" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://t.me/callisto_co" target="_blank"><i class="fab fa-telegram"></i></a>
-                    <a href="viber://chat?number=+380997172287" target="_blank"><i class="fab fa-viber"></i></a>
-                </div>
-                <button class="cart-btn"><i class="fas fa-shopping-cart"></i> (0)</button>
-            </div>
-        </nav>
-    </header>
+body {
+    font-family: 'Playfair Display', serif; /* Красивий і елегантний шрифт */
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f0f8f4, #e6f7ec); /* Ніжний зелений фон */
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
 
-    <section class="categories">
-        <div class="category" data-content="sales">Акції</div>
-        <div class="category" data-content="new">Нове</div>
-        <div class="category" data-content="elegance">Елегантність</div>
-    </section>
+.main-header {
+    background-color: #1a1a1a; /* Чорний фон */
+    padding: 10px 20px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3); /* Тінь */
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #d4a017; /* Золотиста обводка */
+}
 
-    <section class="filters">
-        <h3>Фільтри</h3>
-        <div class="filter-section">
-            <label>Бренди:</label>
-            <select>
-                <option>Acousma</option>
-                <option>Amour Secret</option>
-                <option>Anabel Arto</option>
-                <option>Anfen</option>
-                <option>Anita</option>
-                <option>Annajolly</option>
-                <option>Ao Jia Shi</option>
-            </select>
-        </div>
-        <div class="filter-section">
-            <label>Ціна:</label>
-            <input type="range" min="0" max="5000" value="0" id="priceRange">
-            <span id="priceValue">0 грн</span>
-        </div>
-    </section>
+.main-header .logo {
+    font-size: 1.4em; /* Зменшений розмір шрифту для логотипу */
+    font-weight: bold;
+    color: #c0c0c0; /* Сріблястий колір */
+    text-shadow: 0 0 15px #000, 0 0 10px #87CEEB; /* Небесно-блакитна неонова підсвітка */
+    float: left;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
 
-    <section class="gallery">
-        <div class="item">
-            <img src="./images/lingerie1.jpg" alt="Комплект білизни">
-            <h3>Комплект "Ніжність"</h3>
-            <p>Розкішний набір із шовку та мережива. Розмір: S-M.</p>
-            <div class="price">1500 грн</div>
-            <button class="buy-btn">Купити</button>
-        </div>
-        <div class="item">
-            <img src="./images/lingerie2.jpg" alt="Комплект білизни">
-            <h3>Комплект "Палкість"</h3>
-            <p>Сміливий дизайн для впевнених. Розмір: M-L.</p>
-            <div class="price">2000 грн</div>
-            <button class="buy-btn">Купити</button>
-        </div>
-    </section>
+.main-header .logo:hover {
+    transform: scale(1.1);
+    text-shadow: 0 0 20px #000, 0 0 15px #87CEEB;
+}
 
-    <section class="upload-section">
-        <h2>Додати новий комплект білизни</h2>
-        <form id="uploadForm">
-            <input type="file" id="imageUpload" accept="image/jpeg, image/png" required>
-            <input type="text" id="itemName" placeholder="Назва комплекту" required>
-            <textarea id="itemDescription" placeholder="Опис (розмір, матеріал тощо)" required></textarea>
-            <input type="number" id="itemPrice" placeholder="Ціна (грн)" required>
-            <button type="submit">Додати</button>
-        </form>
-    </section>
+.main-header .nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float: left;
+    margin-left: 20px;
+}
 
-    <footer>
-        <p>© 2025 Callisto.Co. Усі права захищені.</p>
-    </footer>
+.main-header .nav-menu li {
+    display: inline-block;
+    margin-right: 15px; /* Зменшений відступ для компактності */
+}
 
-    <script src="script.js"></script>
-</body>
-</html>
+.main-header .nav-menu a {
+    color: #c0c0c0; /* Сріблястий колір */
+    text-decoration: none;
+    font-size: 1em; /* Зменшений розмір шрифту для меню */
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    font-family: 'Lora', serif;
+}
+
+.main-header .nav-menu a:hover {
+    color: #87CEEB; /* Небесно-блакитна підсвітка */
+    text-shadow: 0 0 10px #87CEEB;
+}
+
+.main-header .search-container {
+    float: left;
+    margin-left: 15px; /* Зменшений відступ для компактності */
+}
+
+.main-header .search-bar {
+    padding: 8px 12px; /* Зменшений розмір поля пошуку */
+    border: 1px solid #87CEEB; /* Небесно-блакитна обводка */
+    border-radius: 5px;
+    font-size: 0.9em; /* Зменшений розмір шрифту */
+    background: #fff;
+    color: #333;
+    box-shadow: 0 0 8px #87CEEB;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-header .search-bar:hover {
+    border-color: #d4a017;
+    box-shadow: 0 0 12px #d4a017;
+}
+
+.main-header .contacts {
+    float: right;
+    margin-top: 5px;
+}
+
+.main-header .phone {
+    color: #c0c0c0; /* Сріблястий колір */
+    font-size: 0.9em; /* Зменшений розмір шрифту */
+    margin-right: 10px;
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.main-header .phone:hover {
+    color: #87CEEB; /* Небесно-блакитна підсвітка */
+    text-shadow: 0 0 10px #87CEEB;
+}
+
+.main-header .socials {
+    display: inline-block;
+    margin-right: 5px; /* Зменшений відступ для компактності */
+}
+
+.main-header .socials a {
+    color: #c0c0c0; /* Сріблястий колір */
+    font-size: 1em; /* Зменшений розмір іконок */
+    margin-left: 5px; /* Зменшений відступ між іконками */
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.main-header .socials a:hover {
+    color: #87CEEB; /* Небесно-блакитна підсвітка */
+    text-shadow: 0 0 12px #87CEEB;
+}
+
+.main-header .cart-btn {
+    background: #87CEEB; /* Небесно-блакитна кнопка кошика */
+    color: white;
+    border: none;
+    padding: 8px 12px; /* Зменшений розмір кнопки */
+    border-radius: 5px;
+    font-size: 0.9em; /* Зменшений розмір шрифту */
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px #87CEEB;
+    border: 1px solid #d4a017; /* Золотиста обводка */
+}
+
+.main-header .cart-btn:hover {
+    background: linear-gradient(45deg, #ffffff, #87CEEB);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #87CEEB;
+}
+
+.main-header .auth-buttons {
+    float: right;
+    margin-top: 5px;
+}
+
+.main-header .auth-buttons button {
+    background: none;
+    color: #c0c0c0; /* Сріблястий колір */
+    border: 1px solid #87CEEB; /* Небесно-блакитна обводка */
+    padding: 8px 10px; /* Зменшений розмір кнопок */
+    border-radius: 5px;
+    font-size: 0.9em; /* Зменшений розмір шрифту */
+    cursor: pointer;
+    margin-left: 8px; /* Зменшений відступ між кнопками */
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.main-header .auth-buttons button:hover {
+    background: linear-gradient(45deg, #ffffff, #87CEEB);
+    color: #333;
+    box-shadow: 0 0 12px #87CEEB;
+}
+
+.hero {
+    text-align: center;
+    padding: 80px 20px 60px;
+    background: linear-gradient(135deg, #f0f8f4, #e6f7ec), url('https://via.placeholder.com/1920x1080?text=Callisto+Background');
+    background-size: cover;
+    background-blend-mode: overlay;
+    color: #333;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-top: 60px;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 3.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 15px #000, 0 0 10px #87CEEB; /* Небесно-блакитна неонова підсвітка */
+    animation: neonPulse 3s infinite ease-in-out;
+}
+
+@keyframes neonPulse {
+    0% { text-shadow: 0 0 10px #000, 0 0 5px #87CEEB; }
+    50% { text-shadow: 0 0 20px #000, 0 0 15px #87CEEB; }
+    100% { text-shadow: 0 0 10px #000, 0 0 5px #87CEEB; }
+}
+
+.hero p {
+    margin: 20px 0 0;
+    font-size: 1.4em;
+    font-style: italic;
+    opacity: 0.9;
+    text-shadow: 0 0 8px #87CEEB; /* Небесно-блакитна підсвітка */
+}
+
+.filters {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(39, 174, 96, 0.2), 0 0 15px #d4a017; /* Неонова тінь із золотом */
+    border: 2px solid #d4a017; /* Золотиста обводка */
+}
+
+.filters h3 {
+    color: #27ae60;
+    margin-bottom: 15px;
+    text-shadow: 0 0 12px #87CEEB, 0 0 6px #d4a017; /* Небесно-блакитна неонова підсвітка */
+    font-family: 'Playfair Display', serif;
+}
+
+.filter-section {
+    margin-bottom: 15px;
+}
+
+.filter-section label {
+    font-weight: bold;
+    color: #333;
+    margin-right: 10px;
+    font-family: 'Lora', serif;
+}
+
+.filter-section select, .filter-section input[type="range"] {
+    padding: 8px 12px;
+    border: 1px solid #87CEEB; /* Небесно-блакитна обводка */
+    border-radius: 5px;
+    font-size: 1em;
+    background: #fff;
+    color: #333;
+    box-shadow: 0 0 8px #87CEEB;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Lora', serif;
+}
+
+.filter-section select:hover, .filter-section input[type="range"]:hover {
+    border-color: #d4a017;
+    box-shadow: 0 0 12px #d4a017;
+}
+
+#priceValue {
+    font-weight: bold;
+    color: #27ae60;
+    margin-left: 10px;
+    text-shadow: 0 0 10px #87CEEB, 0 0 5px #d4a017; /* Небесно-блакитна неонова підсвітка */
+    font-family: 'Playfair Display', serif;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(39, 174, 96, 0.2), 0 0 20px #d4a017;
+    border: 2px solid #d4a017; /* Золотиста обводка */
+}
+
+.category {
+    background: #fff;
+    padding: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(39, 174, 96, 0.2), 0 0 15px #d4a017; /* Неонова тінь із золотом */
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #27ae60;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    text-transform: uppercase;
+    border: 1px solid #d4a017; /* Золотиста обводка */
+    position: relative;
+    overflow: hidden;
+}
+
+.category::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 8px;
+    background: linear-gradient(45deg, transparent, #87CEEB); /* Небесно-блакитна неонова підсвітка */
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+    box-shadow: 0 0 15px #87CEEB;
+}
+
+.category:hover {
+    background: linear-gradient(45deg, #ffffff, #87CEEB); /* Небесно-блакитна неонова підсвітка */
+    color: #333;
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(39, 174, 96, 0.4), 0 0 25px #d4a017;
+    border-color: #d4a017;
+}
+
+.category:hover::before {
+    opacity: 0.3;
+    box-shadow: 0 0 20px #87CEEB;
+}
+
+.category::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    background: linear-gradient(45deg, #ffffff, #87CEEB) border-box; /* Небесно-блакитна неонова підсвітка */
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    transition: border 0.4s ease;
+}
+
+.category:hover::after {
+    border: 1px solid #87CEEB; /* Небесно-блакитна обводка */
+}
+
+.products {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(39, 174, 96, 0.2);
+    border: 2px solid #d4a017; /* Золотиста обводка */
+}
+
+.products h2 {
+    color: #27ae60;
+    text-align: center;
+    margin-bottom: 40px;
+    text-shadow: 0 0 15px #87CEEB, 0 0 8px #d4a017; /* Небесно-блакитна неонова підсвітка */
+    font-family: 'Playfair Display', serif;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(39, 174, 96, 0.2), 0 0 15px #d4a017; /* Неонова тінь із золотом */
+    text-align: center;
+    width: 300px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.4s ease;
+    overflow: hidden;
+    border: 2px solid #d4a017; /* Золотиста обводка */
+    position: relative;
+}
+
+.item::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 10px;
+    background: linear-gradient(45deg, transparent, #87CEEB); /* Небесно-блакитна неонова підсвітка */
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+    box-shadow: 0 0 15px #87CEEB;
+}
+
+.item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(39, 174, 96, 0.4), 0 0 25px #d4a017;
+    opacity: 0.95;
+}
+
+.item:hover::before {
+    opacity: 0.3;
+    box-shadow: 0 0 20px #87CEEB;
+}
+
+.item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    box-shadow: 0 0 10px #87CEEB; /* Небесно-блакитна тінь */
+}
+
+.item img:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.item h3 {
+    margin: 15px 0;
+    color: #27ae60;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px #87CEEB, 0 0 5px #d4a017; /* Небесно-блакитна неонова підсвітка */
+    font-family: 'Playfair Display', serif;
+}
+
+.item p {
+    margin: 10px 0;
+    color: #333;
+    font-size: 1em;
+    line-height: 1.5;
+    text-shadow: 0 0 5px rgba(39, 174, 96, 0.2);
+    font-family: 'Lora', serif;
+}
+
+.item .price-display {
+    font-size: 1.3em;
+    color: #27ae60;
+    font-weight: bold;
+    margin: 15px 0;
+    text-shadow: 0 0 12px #87CEEB, 0 0 6px #d4a017; /* Небесно-блакитна неонова підсвітка */
+    font-family: 'Playfair Display', serif;
+    cursor: default;
+}
+
+.price-tiles {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.price-tile {
+    background: #fff;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(39, 174, 96, 0.3), 0 0 20px #d4a017; /* Неонова тінь із золотом */
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #27ae60;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    text-transform: uppercase;
+    border: 2px solid #d4a017; /* Золотиста обводка */
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) rotateY(0deg);
+}
+
+.price-tile::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 10px;
+    background: linear-gradient(45deg, transparent, #87CEEB); /* Небесно-блакитна неонова підсвітка */
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+    box-shadow: 0 0 15px #87CEEB;
+}
+
+.price-tile:hover {
+    background: linear-gradient(45deg, #ffffff, #87CEEB); /* Небесно-блакитна неонова підсвітка */
+    color: #333;
+    transform: rotateX(10deg) rotateY(10deg) scale(1.1);
+    box-shadow: 0 15px 40px rgba(39, 174, 96, 0.5), 0 0 30px #d4a017;
+    border-color: #d4a017;
+}
+
+.price-tile:hover::before {
+    opacity: 0.3;
+    box-shadow: 0 0 25px #87CEEB;
+}
+
+.price-tile::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background: linear-gradient(45deg, #ffffff, #87CEEB) border-box; /* Небесно-блакитна неонова підсвітка */
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    transition: border 0.4s ease;
+}
+
+.price-tile:hover::after {
+    border: 2px solid #87CEEB; /* Небесно-блакитна обводка */
+}
+
+.upload-section {
+    max-width: 600px;
+    margin: 60px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(39, 174, 96, 0.2);
+    border: 2px solid #d4a017; /* Золотиста обводка */
+}
+
+.upload-section h2 {
+    color: #27ae60;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px #87CEEB, 0 0 8px #d4a017; /* Небесно-блакитна неонова підсвітка */
+    font-family: 'Playfair Display', serif;
+}
+
+.upload-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.upload-section input, .upload-section textarea {
+    padding: 10px;
+    border: 1px solid #87CEEB; /* Небесно-блакитна обводка */
+    border-radius: 5px;
+    font-size: 1em;
+    background: #f0f8f4;
+    color: #333;
+    box-shadow: 0 0 8px #87CEEB;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Lora', serif;
+}
+
+.upload-section input:hover, .upload-section textarea:hover {
+    border-color: #d4a017;
+    box-shadow: 0 0 12px #d4a017;
+}
+
+.upload-section button {
+    padding: 12px;
+    background: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px #87CEEB; /* Небесно-блакитна тінь */
+    border: 1px solid #d4a017; /* Золотиста обводка */
+}
+
+.upload-section button:hover {
+    background: linear-gradient(45deg, #ffffff, #87CEEB); /* Небесно-блакитна неонова підсвітка */
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #87CEEB;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(45deg, #27ae60, #87CEEB); /* Небесно-блакитна неонова підсвітка */
+    color: white;
+    width: 100%;
+    margin-top: 60px;
+    box-shadow: 0 -10px 30px rgba(39, 174, 96, 0.2);
+    border-top: 2px solid #d4a017; /* Золотиста обводка */
+    font-family: 'Lora', serif;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 0 15px rgba(39, 174, 96, 0.5);
+    border: 2px solid #d4a017; /* Золотиста обводка */
+    position: relative;
+}
+
+.modal-content h2 {
+    color: #27ae60;
+    text-shadow: 0 0 12px #87CEEB; /* Небесно-блакитна неонова підсвітка */
+}
+
+.modal-content p {
+    color: #333;
+    font-size: 1em;
+    font-family: 'Lora', serif;
+}
+
+.modal-content button {
+    padding: 10px 20px;
+    background: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #d4a017; /* Золотиста обводка */
+}
+
+.modal-content button:hover {
+    background: linear-gradient(45deg, #ffffff, #87CEEB); /* Небесно-блакитна неонова підсвітка */
+    box-shadow: 0 0 12px #87CEEB;
+}
+
+@media (max-width: 768px) {
+    .main-header .logo { font-size: 1.2em; } /* Додатково зменшуємо для мобільних */
+    .main-header .nav-menu li { margin-right: 10px; } /* Зменшуємо відступи для мобільних */
+    .main-header .nav-menu a { font-size: 0.9em; } /* Зменшуємо шрифт для мобільних */
+    .main-header .search-container { display: none; } /* Приховуємо пошук на мобільних */
+    .main-header .contacts { display: none; } /* Приховуємо контакти на мобільних */
+    .main-header .auth-buttons { margin-top: 0; }
+    .main-header .auth-buttons button { font-size: 0.8em; padding: 6px 8px; } /* Зменшуємо кнопки для мобільних */
+    .main-header .cart-btn { font-size: 0.8em; padding: 6px 10px; } /* Зменшуємо кошик для мобільних */
+    .hero { padding: 60px 20px 40px; margin-top: 50px; }
+    .hero h1 { font-size: 2.5em; }
+    .hero p { font-size: 1.1em; }
+    .filters { margin: 10px; padding: 15px; }
+    .categories-grid { gap: 15px; padding: 40px 10px; }
+    .category { padding: 15px 25px; font-size: 1.2em; }
+    .products { padding: 40px 10px; }
+    .gallery { gap: 15px; }
+    .item { width: 250px; padding: 15px; }
+    .item h3 { font-size: 1.3em; }
+    .item p { font-size: 0.9em; }
+    .item .price-display { font-size: 1.1em; }
+    .price-tiles { gap: 10px; }
+    .price-tile { padding: 15px 25px; font-size: 1.2em; width: 250px; }
+    .upload-section { margin: 50px 10px; padding: 15px; }
+    .upload-section h2 { font-size: 1.3em; }
+    .modal-content { margin: 20% auto; width: 90%; }
+}
