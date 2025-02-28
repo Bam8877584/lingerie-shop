@@ -145,7 +145,7 @@ body {
     border: 1px solid #87CEEB; /* Небесно-блакитна обводка */
     padding: 8px 10px; /* Зменшений розмір кнопок */
     border-radius: 5px;
-    font-size: 0.9em; /* Зменшений розмір шрифту */
+    font-size: 0.9em; /* Зменлений розмір шрифту */
     cursor: pointer;
     margin-left: 8px; /* Зменшений відступ між кнопками */
     transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
@@ -313,10 +313,9 @@ body {
     border: 1px solid transparent;
     background: linear-gradient(45deg, #ffffff, #87CEEB) border-box; /* Небесно-блакитна неонова підсвітка */
     -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: destination-out;
-    mask-composite: exclude;
+    mask-composite: exclude; /* Додано підтримку для всіх браузерів */
+    -moz-mask-composite: exclude; /* Підтримка Firefox */
     transition: border 0.4s ease;
 }
 
@@ -495,7 +494,8 @@ body {
     background: linear-gradient(45deg, #ffffff, #87CEEB) border-box; /* Небесно-блакитна неонова підсвітка */
     -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: destination-out;
-    mask-composite: exclude;
+    mask-composite: exclude; /* Додано підтримку для всіх браузерів */
+    -moz-mask-composite: exclude; /* Підтримка Firefox */
     transition: border 0.4s ease;
 }
 

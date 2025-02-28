@@ -99,7 +99,7 @@ document.querySelectorAll('.price-tile').forEach(tile => {
 
         gsap.to(this, { 
             scale: 1.1, 
-            boxShadow: '0 0 20px #2ecc71', 
+            boxShadow: '0 0 20px #87CEEB', /* Небесно-блакитна неонова підсвітка */
             duration: 0.4, 
             ease: 'power3.out',
             onComplete: () => {
@@ -197,12 +197,12 @@ document.querySelector('.cart-btn').addEventListener('click', () => {
 document.querySelector('.callback-btn').addEventListener('click', () => {
     gsap.to('.callback-btn', { 
         scale: 1.1, 
-        boxShadow: '0 0 15px #2ecc71', 
+        boxShadow: '0 0 15px #87CEEB', /* Небесно-блакитна неонова підсвітка */
         duration: 0.3, 
         ease: 'power3.out',
         onComplete: () => {
             alert('Запит на зворотний дзвінок відправлено! Ми зв’яжемося з вами.');
-            gsap.to('.callback-btn', { scale: 1, boxShadow: '0 0 10px #2ecc71', duration: 0.3, ease: 'power3.out' });
+            gsap.to('.callback-btn', { scale: 1, boxShadow: '0 0 10px #87CEEB', duration: 0.3, ease: 'power3.out' });
         }
     });
 });
