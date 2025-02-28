@@ -68,7 +68,7 @@ body {
     padding: 8px 12px; /* Зменшений розмір поля пошуку */
     border: 1px solid #87CEEB; /* Небесно-блакитна обводка */
     border-radius: 5px;
-    font-size: 0.9em; /* Зменшений розмір шрифту */
+    font-size: 0.9em; /* Зменщений розмір шрифту */
     background: #fff;
     color: #333;
     box-shadow: 0 0 8px #87CEEB;
@@ -119,13 +119,14 @@ body {
     background: #87CEEB; /* Небесно-блакитна кнопка кошика */
     color: white;
     border: none;
-    padding: 8px 12px; /* Зменшений розмір кнопки */
+    padding: 6px 10px; /* Уменьшенный размер кнопки (с 8px 12px до 6px 10px) */
     border-radius: 5px;
-    font-size: 0.9em; /* Зменший розмір шрифту */
+    font-size: 0.8em; /* Уменьшенный шрифт (с 0.9em до 0.8em) */
     cursor: pointer;
     transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 0 10px #87CEEB;
     border: 1px solid #d4a017; /* Золотиста обводка */
+    margin-right: 5px; /* Сдвинут от края (уменьшен отступ справа с 0 до 5px) */
 }
 
 .main-header .cart-btn:hover {
@@ -136,18 +137,18 @@ body {
 
 .main-header .auth-buttons {
     float: right;
-    margin-top: 5px;
+    margin-top: 5px; /* Сдвинут под корзину (оставляем margin-top, но можно убрать, если нужно большее смещение) */
 }
 
 .main-header .auth-buttons button {
     background: none;
     color: #c0c0c0; /* Сріблястий колір */
     border: 1px solid #87CEEB; /* Небесно-блакитна обводка */
-    padding: 8px 10px; /* Зменшений розмір кнопок */
+    padding: 6px 8px; /* Уменьшенный размер кнопок (с 8px 10px до 6px 8px) */
     border-radius: 5px;
-    font-size: 0.9em; /* Зменший розмір шрифту */
+    font-size: 0.8em; /* Уменьшенный шрифт (с 0.9em до 0.8em) */
     cursor: pointer;
-    margin-left: 8px; /* Зменшений відступ між кнопками */
+    margin-left: 5px; /* Уменьшен отступ между кнопками (с 8px до 5px для компактности) */
     transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -313,7 +314,7 @@ body {
     border: 1px solid transparent;
     background: linear-gradient(45deg, #ffffff, #87CEEB) border-box; /* Небесно-блакитна неонова підсвітка */
     -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0); /* Стандартное свойство mask для всех браузеров */
     -webkit-mask-composite: destination-out;
     mask-composite: exclude; /* Поддержка Chrome/Safari */
     -moz-mask-composite: exclude; /* Поддержка Firefox */
@@ -494,7 +495,7 @@ body {
     border: 2px solid transparent;
     background: linear-gradient(45deg, #ffffff, #87CEEB) border-box; /* Небесно-блакитна неонова підсвітка */
     -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0); /* Стандартное свойство mask для всех браузеров */
     -webkit-mask-composite: destination-out;
     mask-composite: exclude; /* Поддержка Chrome/Safari */
     -moz-mask-composite: exclude; /* Поддержка Firefox */
@@ -635,8 +636,8 @@ body {
     .main-header .search-container { display: none; } /* Приховуємо пошук на мобільних */
     .main-header .contacts { display: none; } /* Приховуємо контакти на мобільних */
     .main-header .auth-buttons { margin-top: 0; }
-    .main-header .auth-buttons button { font-size: 0.8em; padding: 6px 8px; } /* Зменшуємо кнопки для мобільних */
-    .main-header .cart-btn { font-size: 0.8em; padding: 6px 10px; } /* Зменшуємо кошик для мобільних */
+    .main-header .auth-buttons button { font-size: 0.7em; padding: 5px 6px; } /* Зменшуємо кнопки для мобільних */
+    .main-header .cart-btn { font-size: 0.7em; padding: 5px 8px; } /* Зменшуємо кошик для мобільних */
     .hero { padding: 60px 20px 40px; margin-top: 50px; }
     .hero h1 { font-size: 2.5em; }
     .hero p { font-size: 1.1em; }
